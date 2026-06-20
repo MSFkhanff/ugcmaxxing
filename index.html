@@ -1,0 +1,1610 @@
+cat > /mnt/user-data/outputs/ugcmaxxing.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGCMaxxing - Create Content & Get Paid Per View</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g1: #0a0f0a;
+  --g2: #0d1a0e;
+  --g3: #111f12;
+  --g4: #162418;
+  --g5: #1c2e1e;
+  --g6: #1e3620;
+  --green: #22c55e;
+  --green-light: #4ade80;
+  --green-dim: #16a34a;
+  --green-xdim: #15803d;
+  --green-pale: #dcfce7;
+  --green-glow: rgba(34,197,94,0.15);
+  --lime: #a3e635;
+  --text: #f0fdf4;
+  --text2: #bbf7d0;
+  --text3: #86efac;
+  --text4: #4ade80;
+  --muted: #6b7280;
+  --border: rgba(34,197,94,0.2);
+  --border2: rgba(34,197,94,0.35);
+  --card: rgba(22,36,24,0.95);
+  --card2: rgba(17,31,18,0.9);
+  --radius: 12px;
+  --radius2: 18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--g1);color:var(--text);min-height:100vh;overflow-x:hidden}
+.page{display:none}
+.page.active{display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--green),var(--green-dim));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--text);letter-spacing:-0.02em}
+.logo-text span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{display:flex;align-items:center;gap:0.75rem}
+.btn-ghost{background:none;border:1px solid var(--border2);color:var(--text2);padding:8px 18px;border-radius:8px;cursor:pointer;font-size:0.875rem;font-family:inherit;transition:all .2s}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.btn-primary{background:var(--green);color:#0a0f0a;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:0.875rem;font-weight:700;border:none;font-family:inherit;transition:all .2s}
+.btn-primary:hover{background:var(--green-light);transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 2rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,197,94,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(34,197,94,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(34,197,94,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.1);border:1px solid var(--border2);color:var(--green-light);padding:6px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;margin-bottom:1.5rem;letter-spacing:.05em}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block}
+.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem}
+.hero-h1 .accent{color:var(--green);font-style:italic}
+.hero-sub{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;color:var(--text3);max-width:560px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-hero{padding:14px 32px;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+.btn-hero-main{background:var(--green);color:#0a0f0a}
+.btn-hero-main:hover{background:var(--green-light);transform:translateY(-2px)}
+.btn-hero-sec{background:none;color:var(--text2);border:1px solid var(--border2)}
+.btn-hero-sec:hover{border-color:var(--green);color:var(--green)}
+.hero-stats{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
+.stat-item{text-align:center}
+.stat-val{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--green)}
+.stat-label{font-size:0.8rem;color:var(--muted);margin-top:2px}
+
+/* HOW IT WORKS */
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:700;letter-spacing:.15em;color:var(--green);text-transform:uppercase;margin-bottom:.75rem}
+.section-h2{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem}
+.section-sub{color:var(--text3);font-size:1rem;max-width:500px;line-height:1.7;margin-bottom:3rem}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.step-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:1.75rem;position:relative;overflow:hidden;transition:border-color .2s}
+.step-card:hover{border-color:var(--border2)}
+.step-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(34,197,94,0.12);position:absolute;top:1rem;right:1.25rem;line-height:1}
+.step-icon{width:42px;height:42px;background:rgba(34,197,94,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.25rem}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.5rem;color:var(--text)}
+.step-desc{font-size:0.875rem;color:var(--text3);line-height:1.6}
+
+/* CAMPAIGNS SECTION */
+.campaigns-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.campaign-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden;cursor:pointer;transition:all .2s}
+.campaign-card:hover{transform:translateY(-3px);border-color:var(--border2)}
+.campaign-thumb{height:160px;background:var(--g4);display:flex;align-items:center;justify-content:center;position:relative}
+.campaign-thumb img{width:100%;height:100%;object-fit:cover}
+.campaign-thumb-placeholder{font-size:2.5rem}
+.campaign-body{padding:1.25rem}
+.campaign-brand{font-size:0.75rem;color:var(--green);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem}
+.campaign-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:.75rem}
+.campaign-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem}
+.tag{font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.1);border:1px solid var(--border);color:var(--text3)}
+.tag.premium{background:rgba(163,230,53,0.12);border-color:rgba(163,230,53,0.3);color:#a3e635}
+.campaign-cpm{display:flex;align-items:center;justify-content:space-between}
+.cpm-val{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--green)}
+.cpm-label{font-size:0.7rem;color:var(--muted)}
+.join-btn{background:var(--green);color:#0a0f0a;border:none;padding:7px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.join-btn:hover{background:var(--green-light)}
+
+/* LEADERBOARD */
+.leaderboard{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden}
+.lb-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.lb-title{font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.lb-row{display:flex;align-items:center;padding:.875rem 1.5rem;border-bottom:1px solid rgba(34,197,94,0.08);transition:background .15s}
+.lb-row:hover{background:rgba(34,197,94,0.04)}
+.lb-row:last-child{border-bottom:none}
+.lb-rank{width:28px;font-size:0.8rem;font-weight:700;color:var(--muted)}
+.lb-rank.gold{color:#f59e0b}
+.lb-rank.silver{color:#9ca3af}
+.lb-rank.bronze{color:#b45309}
+.lb-avatar{width:34px;height:34px;border-radius:50%;background:var(--g5);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--green);margin-right:.75rem;flex-shrink:0}
+.lb-name{flex:1;font-size:0.875rem;font-weight:500}
+.lb-streak{font-size:0.75rem;color:var(--text4);margin-right:1rem}
+.lb-earnings{font-family:'Space Grotesk',sans-serif;font-size:0.875rem;font-weight:600;color:var(--green)}
+
+/* DASHBOARD LAYOUT */
+.dash-layout{display:flex;min-height:100vh;padding-top:64px}
+.sidebar{width:220px;flex-shrink:0;background:var(--g2);border-right:1px solid var(--border);position:fixed;top:64px;bottom:0;overflow-y:auto;padding:1rem 0}
+.sidebar-section{padding:.5rem .75rem;margin-bottom:.25rem}
+.sidebar-label{font-size:0.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 .75rem;margin-bottom:.5rem}
+.sidebar-item{display:flex;align-items:center;gap:.75rem;padding:.625rem .75rem;border-radius:9px;cursor:pointer;transition:all .15s;color:var(--text3);font-size:0.875rem;font-weight:500;text-decoration:none;position:relative}
+.sidebar-item:hover{background:var(--g5);color:var(--text)}
+.sidebar-item.active{background:rgba(34,197,94,0.12);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.sidebar-item .icon{font-size:1rem;width:20px;text-align:center}
+.sidebar-badge{margin-left:auto;background:var(--green);color:#0a0f0a;font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:100px}
+.dash-main{margin-left:220px;flex:1;padding:2rem;min-height:calc(100vh - 64px)}
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.dash-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em}
+.breadcrumb{font-size:0.8rem;color:var(--muted);margin-top:.2rem}
+.breadcrumb span{color:var(--text3)}
+
+/* TIER BAR */
+.tier-bar{background:var(--g3);border:1px solid var(--border);border-radius:100px;padding:8px 16px;display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.tier-dot{width:10px;height:10px;border-radius:50%}
+.tier-dot.bronze{background:#b45309}
+.tier-dot.silver{background:#9ca3af}
+.tier-dot.gold{background:#f59e0b}
+.tier-name{font-size:0.8rem;font-weight:700}
+.tier-progress{flex:1;height:5px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden}
+.tier-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--lime));border-radius:100px;transition:width .5s}
+.tier-xp{font-size:0.75rem;color:var(--muted)}
+
+/* METRIC CARDS */
+.metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.5rem}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem}
+.metric-label{font-size:0.75rem;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.metric-val{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--text)}
+.metric-val.green{color:var(--green)}
+.metric-sub{font-size:0.7rem;color:var(--text4);margin-top:.2rem}
+
+/* EARNINGS PAGE */
+.revenue-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:2rem;margin-bottom:1.25rem}
+.revenue-label{font-size:0.75rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.revenue-amount{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--text);margin-bottom:.25rem}
+.revenue-tags{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.rev-tag{font-size:0.75rem;padding:3px 10px;border-radius:100px}
+.rev-tag.confirmed{background:rgba(34,197,94,0.15);color:var(--green)}
+.rev-tag.estimated{background:rgba(251,191,36,0.15);color:#fbbf24}
+.chart-area{height:140px;position:relative;overflow:hidden}
+.chart-svg{width:100%;height:100%}
+.earn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
+.earn-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem}
+.earn-box-label{font-size:0.7rem;color:var(--muted);margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem}
+.earn-box-val{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--text)}
+
+/* TOP EARNERS PANEL */
+.earners-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden}
+.earners-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.earners-title{font-size:0.875rem;font-weight:700;display:flex;align-items:center;gap:.4rem}
+.earner-row{display:flex;align-items:center;padding:.7rem 1.25rem;border-bottom:1px solid rgba(34,197,94,0.07)}
+.earner-row:last-child{border-bottom:none}
+.earner-av{width:30px;height:30px;border-radius:50%;background:var(--g5);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;overflow:hidden}
+.earner-av img{width:100%;height:100%;object-fit:cover}
+.earner-info{flex:1;margin-left:.6rem}
+.earner-name{font-size:0.8rem;font-weight:600}
+.earner-streak{font-size:0.7rem;color:var(--text4)}
+.earner-amt{font-size:0.8rem;font-weight:700;color:var(--green)}
+.earner-rank{font-size:0.7rem;color:var(--muted);margin-left:.5rem}
+
+/* SUBMISSIONS TABLE */
+.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden}
+.table-toolbar{padding:.875rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.filter-pill{background:rgba(34,197,94,0.08);border:1px solid var(--border);color:var(--text3);font-size:0.75rem;padding:5px 12px;border-radius:100px;cursor:pointer;transition:all .15s;font-family:inherit}
+.filter-pill:hover{border-color:var(--border2);color:var(--text)}
+table{width:100%;border-collapse:collapse}
+th{padding:.75rem 1rem;text-align:left;font-size:0.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:600}
+td{padding:.875rem 1rem;font-size:0.82rem;border-bottom:1px solid rgba(34,197,94,0.07);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(34,197,94,0.03)}
+.status-badge{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;padding:3px 9px;border-radius:100px;font-weight:600}
+.status-approved{background:rgba(34,197,94,0.12);color:var(--green)}
+.status-pending{background:rgba(251,191,36,0.12);color:#fbbf24}
+.status-rejected{background:rgba(239,68,68,0.12);color:#f87171}
+.status-voided{background:rgba(107,114,128,0.12);color:var(--muted)}
+.platform-icon{display:inline-flex;align-items:center;gap:.3rem;font-size:0.75rem}
+.earn-status{font-size:0.72rem;color:var(--muted)}
+.earn-status.earning{color:var(--green)}
+.link-cell{font-size:0.75rem;color:var(--text3);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* RETAINERS */
+.retainer-lock{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center}
+.lock-icon{width:64px;height:64px;background:rgba(34,197,94,0.1);border:1px solid var(--border2);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem}
+.streak-progress{width:100%;max-width:480px;margin:.75rem auto 0}
+.streak-bar{height:8px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden;margin:.5rem 0}
+.streak-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--lime));border-radius:100px}
+.streak-dots{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin:.75rem 0}
+.streak-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--muted)}
+.streak-dot.done{background:var(--green);color:#0a0f0a;border-color:var(--green)}
+.streak-dot.active{background:rgba(34,197,94,0.25);border-color:var(--green);color:var(--green)}
+
+/* FORMS */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:2rem;max-width:480px}
+.form-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:1.5rem}
+.form-group{margin-bottom:1.25rem}
+label{display:block;font-size:0.8rem;font-weight:600;color:var(--text2);margin-bottom:.4rem}
+input,select,textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:9px;padding:10px 14px;color:var(--text);font-family:inherit;font-size:0.875rem;transition:border-color .2s;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}
+select option{background:var(--g3)}
+textarea{resize:vertical;min-height:80px}
+.form-hint{font-size:0.72rem;color:var(--muted);margin-top:.3rem}
+.form-error{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:9px;padding:.75rem 1rem;font-size:0.82rem;color:#f87171;margin-bottom:1rem;display:none}
+.form-error.show{display:block}
+.form-submit{width:100%;background:var(--green);color:#0a0f0a;border:none;padding:12px;border-radius:9px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:all .2s}
+.form-submit:hover{background:var(--green-light)}
+.form-divider{text-align:center;color:var(--muted);font-size:0.8rem;margin:1rem 0;position:relative}
+.form-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border)}
+.form-divider span{background:var(--card);padding:0 .75rem;position:relative}
+.form-footer{text-align:center;font-size:0.82rem;color:var(--muted);margin-top:1rem}
+.form-footer a{color:var(--green);cursor:pointer;text-decoration:none}
+
+/* AUTH PAGES */
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--g1);padding-top:80px}
+.auth-inner{width:100%;max-width:420px}
+.auth-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:2rem}
+.auth-logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--green),var(--green-dim));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--g3);border:1px solid var(--border2);border-radius:var(--radius2);max-width:480px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.modal-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800}
+.modal-close{background:none;border:none;color:var(--muted);font-size:1.25rem;cursor:pointer;padding:4px;border-radius:6px;transition:color .2s}
+.modal-close:hover{color:var(--text)}
+
+/* ADMIN */
+.admin-sidebar-item{display:flex;align-items:center;gap:.75rem;padding:.625rem .75rem;border-radius:9px;cursor:pointer;transition:all .15s;color:var(--text3);font-size:0.875rem;font-weight:500;margin:.1rem .5rem}
+.admin-sidebar-item:hover{background:var(--g5);color:var(--text)}
+.admin-sidebar-item.active{background:rgba(34,197,94,0.12);color:var(--green)}
+.admin-action-btn{padding:6px 14px;border-radius:7px;font-size:0.75rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+.admin-approve{background:rgba(34,197,94,0.15);color:var(--green)}
+.admin-approve:hover{background:rgba(34,197,94,0.25)}
+.admin-reject{background:rgba(239,68,68,0.12);color:#f87171}
+.admin-reject:hover{background:rgba(239,68,68,0.22)}
+.admin-payout-btn{background:rgba(163,230,53,0.12);color:#a3e635}
+.admin-payout-btn:hover{background:rgba(163,230,53,0.22)}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--g4);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;font-size:0.875rem;z-index:300;transform:translateY(80px);opacity:0;transition:all .3s;max-width:320px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.success{border-color:var(--green);color:var(--green)}
+.toast.error{border-color:#f87171;color:#f87171}
+
+/* BALANCE PAGE */
+.balance-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
+.bal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem}
+.bal-label{font-size:0.7rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;margin-bottom:.4rem}
+.bal-val{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800}
+.bal-val.green{color:var(--green)}
+.withdraw-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:1.75rem;max-width:440px}
+.withdraw-avail{margin-bottom:1.25rem}
+.withdraw-amount{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--green)}
+.withdraw-label{font-size:0.75rem;color:var(--muted)}
+.withdraw-methods{display:flex;gap:.75rem;margin:.75rem 0}
+.pay-method{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:9px;padding:.625rem 1rem;cursor:pointer;font-size:0.8rem;transition:all .15s;display:flex;align-items:center;gap:.4rem}
+.pay-method.selected{border-color:var(--green);background:rgba(34,197,94,0.08);color:var(--green)}
+
+/* LANDING SECTIONS */
+.landing-section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2.5rem}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:1.75rem;position:relative}
+.price-card.featured{border-color:var(--border2)}
+.featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#0a0f0a;font-size:0.7rem;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:.05em}
+.price-name{font-size:0.875rem;font-weight:700;color:var(--text3);margin-bottom:.5rem}
+.price-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;margin-bottom:.25rem}
+.price-period{font-size:0.8rem;color:var(--muted)}
+.price-features{margin-top:1.25rem;list-style:none}
+.price-features li{font-size:0.85rem;color:var(--text3);padding:.4rem 0;border-bottom:1px solid rgba(34,197,94,0.07);display:flex;align-items:center;gap:.5rem}
+.price-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--g2);border-top:1px solid var(--border);padding:3rem 2rem;margin-top:2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-logo-text{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+.footer-logo-text span{color:var(--green)}
+.footer-tagline{font-size:0.82rem;color:var(--muted);margin-top:.5rem;line-height:1.6}
+.footer-col-title{font-size:0.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:.4rem}
+.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color .2s;cursor:pointer}
+.footer-links a:hover{color:var(--green)}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:var(--muted)}
+
+/* ACCOUNT */
+.account-layout{display:grid;grid-template-columns:200px 1fr;gap:1.5rem}
+.account-nav{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:.5rem;height:fit-content}
+.account-nav-item{display:block;padding:.625rem .875rem;border-radius:9px;font-size:0.85rem;font-weight:500;color:var(--text3);cursor:pointer;transition:all .15s;text-decoration:none}
+.account-nav-item:hover{background:var(--g5);color:var(--text)}
+.account-nav-item.active{background:rgba(34,197,94,0.12);color:var(--green)}
+.account-content{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:1.75rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .dash-layout{flex-direction:column}
+  .sidebar{display:none}
+  .dash-main{margin-left:0}
+  .earn-grid{grid-template-columns:repeat(2,1fr)}
+  .balance-cards{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .account-layout{grid-template-columns:1fr}
+}
+
+/* CONNECT BANNER */
+.connect-banner{background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:.875rem 1.25rem;display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;font-size:0.85rem}
+.connect-banner a{color:var(--green);text-decoration:none;font-weight:600}
+.connect-banner a:hover{text-decoration:underline}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:4rem 2rem;color:var(--muted)}
+.empty-icon{font-size:3rem;margin-bottom:1rem;opacity:.4}
+.empty-title{font-size:1rem;font-weight:600;color:var(--text3);margin-bottom:.4rem}
+.empty-sub{font-size:0.85rem}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--g2)}
+::-webkit-scrollbar-thumb{background:var(--g6);border-radius:100px}
+::-webkit-scrollbar-thumb:hover{background:var(--green-dim)}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a class="nav-logo" onclick="showPage('landing')">
+    <div class="logo-icon">🎬</div>
+    <div class="logo-text">UGC<span>Maxxing</span></div>
+  </a>
+  <div class="nav-links" id="landingNavLinks">
+    <a onclick="showPage('landing')">For Creators</a>
+    <a onclick="showPage('landing')">For Brands</a>
+    <a onclick="showPage('landing')">Blog</a>
+  </div>
+  <div class="nav-cta" id="navCta">
+    <button class="btn-ghost" onclick="showPage('login')">Sign In</button>
+    <button class="btn-primary" onclick="showPage('signup')">Get Started</button>
+  </div>
+  <div id="navAuthed" style="display:none;align-items:center;gap:1rem">
+    <div style="font-size:.82rem;color:var(--text3)">Bronze <span style="color:var(--green);font-weight:700">2,283 XP</span></div>
+    <div onclick="showPage('account')" style="width:34px;height:34px;border-radius:50%;background:rgba(34,197,94,0.2);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--green)">S</div>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ============ LANDING PAGE ============ -->
+<div class="page active" id="page-landing">
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">🇵🇰 Built for Pakistani Creators</div>
+    <h1 class="hero-h1">Create Content &<br><span class="accent">Get Paid</span> Per View</h1>
+    <p class="hero-sub">Join campaigns from global brands, use proven viral templates, and earn based on your content's real performance.</p>
+    <div class="hero-btns">
+      <button class="btn-hero btn-hero-main" onclick="showPage('signup')">Start Creating →</button>
+      <button class="btn-hero btn-hero-sec" onclick="showPage('landing')">For Brands</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-val">Rs 0</div><div class="stat-label">Paid This Month</div></div>
+      <div class="stat-item"><div class="stat-val">12+</div><div class="stat-label">Active Campaigns</div></div>
+      <div class="stat-item"><div class="stat-val">5K+</div><div class="stat-label">Pakistani Creators</div></div>
+      <div class="stat-item"><div class="stat-val">3 Steps</div><div class="stat-label">To Start Earning</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div style="background:var(--g2);padding:.1px 0">
+<div class="section">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-h2">Start earning in <em style="color:var(--green)">three simple steps</em></h2>
+  <p class="section-sub">No experience needed. Browse, create, and get paid for every view your content generates.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">📋</div>
+      <div class="step-title">Browse Campaigns</div>
+      <div class="step-desc">Explore brand campaigns with ready-to-use viral templates designed for guaranteed views. Pick what fits your niche.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">🎥</div>
+      <div class="step-title">Create & Submit</div>
+      <div class="step-desc">Follow step-by-step tutorials that show you exactly how to recreate already-viral videos. No fancy equipment needed.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">💸</div>
+      <div class="step-title">Earn Per View</div>
+      <div class="step-desc">Get paid in PKR for every view your content earns. Our transparent CPM system means you always know exactly what you'll make.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Campaigns Preview -->
+<div class="section">
+  <div class="section-label">Live Campaigns</div>
+  <h2 class="section-h2">Campaigns available <em style="color:var(--green)">right now</em></h2>
+  <p class="section-sub">Apply today and start submitting. New campaigns added weekly from top global brands.</p>
+  <div class="campaigns-grid" id="landingCampaigns"></div>
+  <div style="text-align:center;margin-top:2rem"><button class="btn-ghost" onclick="showPage('signup')" style="padding:12px 28px">View All Campaigns →</button></div>
+</div>
+
+<!-- Leaderboard Preview -->
+<div style="background:var(--g2);padding:.1px 0">
+<div class="section" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+  <div>
+    <div class="section-label">Leaderboard</div>
+    <h2 class="section-h2" style="font-size:1.8rem">Top creators <em style="color:var(--green)">this month</em></h2>
+    <p style="color:var(--text3);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem">Watch the leaderboard and compete for top spots. Top earners get exclusive retainer deals and bonus campaigns.</p>
+    <button class="btn-primary" onclick="showPage('signup')">Join & Compete</button>
+  </div>
+  <div class="leaderboard" id="landingLeaderboard"></div>
+</div>
+</div>
+
+<!-- Pricing -->
+<div class="landing-section">
+<div class="section-inner">
+  <div style="text-align:center;margin-bottom:1rem">
+    <div class="section-label" style="justify-content:center;display:flex">Pricing</div>
+    <h2 class="section-h2" style="text-align:center">Transparent. <em style="color:var(--green)">Creator-first.</em></h2>
+    <p style="color:var(--text3);text-align:center;max-width:500px;margin:0 auto">Our platform fee is clearly shown on every campaign. You always know your cut before you submit.</p>
+  </div>
+  <div class="pricing-cards">
+    <div class="price-card">
+      <div class="price-name">Copper</div>
+      <div class="price-val">Free</div>
+      <div class="price-period">No monthly cost</div>
+      <ul class="price-features">
+        <li>Access all public campaigns</li>
+        <li>Up to 5 submissions/month</li>
+        <li>Earnings dashboard</li>
+        <li>1 social account</li>
+      </ul>
+      <button class="btn-ghost" style="width:100%;margin-top:1.25rem" onclick="showPage('signup')">Get Started</button>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-badge">MOST POPULAR</div>
+      <div class="price-name">Bronze</div>
+      <div class="price-val">Free</div>
+      <div class="price-period">Unlock by posting 7 days</div>
+      <ul class="price-features">
+        <li>Unlimited submissions</li>
+        <li>Premium campaigns</li>
+        <li>Leaderboard visibility</li>
+        <li>Up to 5 social accounts</li>
+        <li>Apply for Retainers</li>
+      </ul>
+      <button class="btn-primary" style="width:100%;margin-top:1.25rem" onclick="showPage('signup')">Start Earning</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Silver & Gold</div>
+      <div class="price-val">Earned</div>
+      <div class="price-period">By consistent posting</div>
+      <ul class="price-features">
+        <li>Guaranteed retainer deals</li>
+        <li>Private campaign access</li>
+        <li>Priority payouts</li>
+        <li>Brand matching</li>
+        <li>Dedicated support</li>
+      </ul>
+      <button class="btn-ghost" style="width:100%;margin-top:1.25rem" onclick="showPage('signup')">Learn More</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-text">UGC<span>Maxxing</span></div>
+      <div class="footer-tagline">Pakistan's first UGC creator marketplace. Create content, earn per view, and build a sustainable creator business.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('signup')">For Creators</a></li>
+        <li><a onclick="showPage('landing')">For Brands</a></li>
+        <li><a onclick="showPage('landing')">Campaigns</a></li>
+        <li><a onclick="showPage('landing')">Leaderboard</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <ul class="footer-links">
+        <li><a>Blog</a></li>
+        <li><a>Creator Guide</a></li>
+        <li><a>FAQs</a></li>
+        <li><a>Discord</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a>About</a></li>
+        <li><a>Careers</a></li>
+        <li><a>Privacy</a></li>
+        <li><a>Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 UGCMaxxing. Made for Pakistan 🇵🇰</span>
+    <span>Karachi, Pakistan</span>
+  </div>
+</footer>
+</div>
+
+<!-- ============ LOGIN PAGE ============ -->
+<div class="page" id="page-login">
+<div class="auth-page">
+  <div class="auth-inner">
+    <div class="auth-logo">
+      <div class="auth-logo-icon">🎬</div>
+      <div class="logo-text" style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800">UGC<span style="color:var(--green)">Maxxing</span></div>
+    </div>
+    <div class="form-card" style="max-width:100%">
+      <div class="form-title">Welcome back</div>
+      <div class="form-error" id="loginError">Invalid email or password.</div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="••••••••">
+      </div>
+      <button class="form-submit" onclick="doLogin()">Sign In</button>
+      <div class="form-divider"><span>or</span></div>
+      <div class="form-footer">Don't have an account? <a onclick="showPage('signup')">Sign up free</a></div>
+      <div class="form-footer" style="margin-top:.5rem"><a onclick="showPage('admin-login')" style="color:var(--muted);font-size:.75rem">Admin Portal →</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SIGNUP PAGE ============ -->
+<div class="page" id="page-signup">
+<div class="auth-page">
+  <div class="auth-inner">
+    <div class="auth-logo">
+      <div class="auth-logo-icon">🎬</div>
+      <div class="logo-text" style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800">UGC<span style="color:var(--green)">Maxxing</span></div>
+    </div>
+    <div class="form-card" style="max-width:100%">
+      <div class="form-title">Join as a Creator</div>
+      <div class="form-error" id="signupError"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="signupFirst" placeholder="Ahmad">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="signupLast" placeholder="Khan">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="signupUser" placeholder="ahmadkhan">
+        <div class="form-hint">Lowercase letters, numbers, underscores only</div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="signupEmail" placeholder="you@gmail.com">
+      </div>
+      <div class="form-group">
+        <label>Phone (optional)</label>
+        <input type="tel" id="signupPhone" placeholder="+92 300 0000000">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="signupPass" placeholder="Min. 8 characters">
+      </div>
+      <button class="form-submit" onclick="doSignup()">Create Account</button>
+      <div class="form-footer">Already have an account? <a onclick="showPage('login')">Sign in</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ CREATOR DASHBOARD ============ -->
+<div class="page" id="page-dashboard">
+<div class="dash-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div style="padding:.5rem .75rem 1rem">
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.5rem .75rem">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(34,197,94,0.2);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--green)">S</div>
+        <div>
+          <div style="font-size:.82rem;font-weight:600">shamil</div>
+          <div style="font-size:.7rem;color:var(--muted)">@chillout</div>
+        </div>
+      </div>
+    </div>
+    <a class="sidebar-item active" onclick="showDashTab('campaigns')" id="stab-campaigns">
+      <span class="icon">📋</span> Campaigns
+    </a>
+    <a class="sidebar-item" onclick="showDashTab('submissions')" id="stab-submissions">
+      <span class="icon">📤</span> Submissions
+      <span class="sidebar-badge" id="submissionsBadge">3</span>
+    </a>
+    <a class="sidebar-item" onclick="showDashTab('earnings')" id="stab-earnings">
+      <span class="icon">💰</span> Earnings
+    </a>
+    <a class="sidebar-item" onclick="showDashTab('retainers')" id="stab-retainers">
+      <span class="icon">🔒</span> Retainers
+    </a>
+    <a class="sidebar-item" onclick="showDashTab('courses')" id="stab-courses">
+      <span class="icon">📚</span> Courses
+    </a>
+    <div style="border-top:1px solid var(--border);margin:1rem .75rem .5rem"></div>
+    <a class="sidebar-item" onclick="showDashTab('account')">
+      <span class="icon">⚙️</span> Account
+    </a>
+    <a class="sidebar-item" onclick="doLogout()" style="margin-top:.5rem">
+      <span class="icon">🚪</span> Log Out
+    </a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dash-main">
+    <!-- Tier Bar -->
+    <div class="tier-bar">
+      <div class="tier-dot bronze"></div>
+      <div class="tier-name" style="font-size:.8rem;font-weight:700">Bronze</div>
+      <div class="tier-progress"><div class="tier-fill" style="width:62%"></div></div>
+      <div class="tier-xp">2,717 to Silver &nbsp;·&nbsp; 2,283 XP</div>
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--g5);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--green)">S</div>
+    </div>
+
+    <!-- CAMPAIGNS TAB -->
+    <div id="dtab-campaigns">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Campaigns</span></div>
+          <div class="dash-title">Campaigns</div>
+        </div>
+        <button class="btn-primary" onclick="openJoinDiscord()">Join Discord</button>
+      </div>
+      <div class="connect-banner">⚠️ <a onclick="openJoinDiscord()">Connect your Discord</a> to get access to private campaigns.</div>
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Browse And Join Active Campaigns</div>
+      <div style="font-size:.75rem;color:var(--text3);font-weight:600;margin-bottom:.75rem">MY BRANDS 2</div>
+      <div class="campaigns-grid" id="myBrandsCampaigns" style="margin-bottom:1.5rem"></div>
+      <div style="font-size:.75rem;color:var(--text3);font-weight:600;margin-bottom:.75rem">BRANDS 4</div>
+      <div class="campaigns-grid" id="otherBrandsCampaigns"></div>
+    </div>
+
+    <!-- SUBMISSIONS TAB -->
+    <div id="dtab-submissions" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Submissions</span></div>
+          <div class="dash-title">Submissions</div>
+        </div>
+        <button class="btn-primary" onclick="openSubmitModal()">+ Submit Video</button>
+      </div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem">Your submitted content</div>
+      <div class="table-wrap">
+        <div class="table-toolbar">
+          <div class="filter-pill">All Statuses</div>
+          <div class="filter-pill">Earning: All</div>
+          <div class="filter-pill">Campaign: All</div>
+          <div class="filter-pill">All Platforms</div>
+          <div class="filter-pill">Account: All</div>
+          <div class="filter-pill" style="margin-left:auto">Date (Newest)</div>
+        </div>
+        <div style="overflow-x:auto">
+          <table id="submissionsTable">
+            <thead>
+              <tr>
+                <th>Video</th>
+                <th>Campaign</th>
+                <th>Views</th>
+                <th>Likes</th>
+                <th>Projected Earnings</th>
+                <th>Submitted</th>
+                <th>Status</th>
+                <th>Earning Status</th>
+                <th>Platform</th>
+              </tr>
+            </thead>
+            <tbody id="submissionsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- EARNINGS TAB -->
+    <div id="dtab-earnings" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Earnings</span></div>
+          <div class="dash-title">Earnings</div>
+        </div>
+        <button class="btn-primary" onclick="showDashTab('balance')">Withdraw →</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:1.25rem;align-items:start">
+        <div>
+          <div class="revenue-card">
+            <div class="revenue-label">REVENUE</div>
+            <div class="revenue-amount" id="totalRevDisplay">$29.95</div>
+            <div class="revenue-tags">
+              <span class="rev-tag confirmed">✦ $14.20 confirmed</span>
+              <span class="rev-tag estimated">◉ $15.75 estimated</span>
+            </div>
+            <div class="chart-area">
+              <svg class="chart-svg" viewBox="0 0 600 120" preserveAspectRatio="none">
+                <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/><stop offset="100%" stop-color="#22c55e" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,110 L50,108 L100,105 L150,100 L200,95 L250,88 L300,50 L350,25 L400,18 L450,35 L500,55 L550,70 L600,75" fill="none" stroke="#22c55e" stroke-width="2"/>
+                <path d="M0,110 L50,108 L100,105 L150,100 L200,95 L250,88 L300,50 L350,25 L400,18 L450,35 L500,55 L550,70 L600,75 L600,120 L0,120Z" fill="url(#cg)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="earn-grid">
+            <div class="earn-box"><div class="earn-box-label">✓ Confirmed (30D)</div><div class="earn-box-val" style="color:var(--green)">$14.20</div></div>
+            <div class="earn-box"><div class="earn-box-label">◉ Estimated (30D)</div><div class="earn-box-val" style="color:#fbbf24">$15.75</div></div>
+            <div class="earn-box"><div class="earn-box-label">Σ Total (30D)</div><div class="earn-box-val">$29.95</div></div>
+            <div class="earn-box"><div class="earn-box-label">👁 Total Views (30D)</div><div class="earn-box-val">7,863</div></div>
+          </div>
+        </div>
+        <div class="earners-panel">
+          <div class="earners-header">
+            <div class="earners-title">🏆 Top Earners</div>
+            <div style="font-size:.72rem;color:var(--muted)">Last 30 Days</div>
+          </div>
+          <div id="topEarnersList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BALANCE TAB -->
+    <div id="dtab-balance" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Account <span>→ Balance</span></div>
+          <div class="dash-title">Balance</div>
+        </div>
+      </div>
+      <div class="balance-cards">
+        <div class="bal-card"><div class="bal-label">⏳ Pending earnings</div><div class="bal-val" style="color:#fbbf24">$15.75</div></div>
+        <div class="bal-card"><div class="bal-label">📤 Queued for payout</div><div class="bal-val">$3.92</div></div>
+        <div class="bal-card"><div class="bal-label">✅ Available to withdraw</div><div class="bal-val green">$10.29</div></div>
+      </div>
+      <div class="withdraw-card">
+        <div class="withdraw-avail">
+          <div class="withdraw-label">AVAILABLE BALANCE</div>
+          <div class="withdraw-amount">$10.29 USD</div>
+        </div>
+        <div style="font-size:.8rem;color:var(--muted);margin-bottom:.5rem">Select withdrawal method:</div>
+        <div class="withdraw-methods">
+          <div class="pay-method selected" onclick="selectPayMethod(this)">🏦 JazzCash</div>
+          <div class="pay-method" onclick="selectPayMethod(this)">📱 EasyPaisa</div>
+          <div class="pay-method" onclick="selectPayMethod(this)">🌐 PayPal</div>
+        </div>
+        <div class="form-group" style="margin-top:.75rem">
+          <label>Account Number / Email</label>
+          <input type="text" placeholder="Your JazzCash number">
+        </div>
+        <button class="form-submit" onclick="doWithdraw()">Request Withdrawal</button>
+        <div style="font-size:.75rem;color:var(--muted);margin-top:.75rem;text-align:center">Withdrawals processed within 1–3 business days</div>
+      </div>
+    </div>
+
+    <!-- RETAINERS TAB -->
+    <div id="dtab-retainers" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Retainers</span></div>
+          <div class="dash-title">Retainers</div>
+        </div>
+      </div>
+      <div class="retainer-lock">
+        <div class="lock-icon">🔒</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.5rem">Complete a 14-Day Posting Streak</h3>
+        <p style="font-size:.875rem;color:var(--text3);max-width:380px">In order to apply for base pay you need to complete your posting schedule.</p>
+        <div class="streak-progress">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <span style="font-size:.8rem;color:var(--green);font-weight:700">🔥 3 / 14 days</span>
+            <span style="font-size:.75rem;color:var(--muted)">21%</span>
+          </div>
+          <div class="streak-bar"><div class="streak-fill" style="width:21%"></div></div>
+          <div class="streak-dots" id="streakDots"></div>
+          <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem">Completing your streak lets you apply for a retainer. Not guaranteed — applications are reviewed.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSES TAB -->
+    <div id="dtab-courses" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Courses</span></div>
+          <div class="dash-title">Courses</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem" id="coursesList"></div>
+    </div>
+
+    <!-- ACCOUNT TAB -->
+    <div id="dtab-account" style="display:none">
+      <div class="dash-header">
+        <div>
+          <div class="breadcrumb">Creator <span>→ Account</span></div>
+          <div class="dash-title">Account</div>
+        </div>
+      </div>
+      <div class="account-layout">
+        <div class="account-nav">
+          <div class="account-nav-item active" onclick="switchAccountTab('profile',this)">Profile</div>
+          <div class="account-nav-item" onclick="switchAccountTab('accounts',this)">Accounts</div>
+          <div class="account-nav-item" onclick="switchAccountTab('balance-tab',this)">Balance</div>
+          <div class="account-nav-item" onclick="switchAccountTab('affiliates',this)">Affiliates</div>
+        </div>
+        <div class="account-content">
+          <div id="acctab-profile">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:1.25rem">Personal Information</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+              <div class="form-group"><label>Name</label><input value="shamil"></div>
+              <div class="form-group"><label>Username</label><input value="chillout"></div>
+            </div>
+            <div class="form-group"><label>Phone Number</label><input value="+13207661354"></div>
+            <button class="form-submit" style="max-width:200px" onclick="showToast('Profile saved!','success')">Save Changes</button>
+            <div style="border-top:1px solid var(--border);margin:1.5rem 0;padding-top:1.5rem">
+              <h4 style="font-size:.875rem;font-weight:600;margin-bottom:.25rem">Submission Streak</h4>
+              <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Your consecutive daily submission streak</p>
+              <div style="display:flex;gap:2rem">
+                <div><div style="font-size:.7rem;color:var(--muted)">Current streak</div><div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--green)">🔥 3</div></div>
+                <div><div style="font-size:.7rem;color:var(--muted)">Longest streak</div><div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800">3</div></div>
+              </div>
+            </div>
+          </div>
+          <div id="acctab-accounts" style="display:none">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+              <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600">Social Accounts</h3><p style="font-size:.78rem;color:var(--muted)">5 accounts connected</p></div>
+              <div style="display:flex;gap:.5rem">
+                <button class="btn-ghost" style="font-size:.75rem;padding:6px 12px" onclick="showToast('YouTube account added!','success')">+ YouTube</button>
+                <button class="btn-ghost" style="font-size:.75rem;padding:6px 12px" onclick="showToast('Instagram account added!','success')">+ Instagram</button>
+                <button class="btn-ghost" style="font-size:.75rem;padding:6px 12px" onclick="showToast('TikTok account added!','success')">+ TikTok</button>
+              </div>
+            </div>
+            <table style="width:100%">
+              <thead><tr><th>Platform</th><th>Username</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td>📸 Instagram</td><td>shamil.site</td><td><span class="status-badge status-pending">Unverified — N3CC2H (add to bio)</span></td><td><button class="btn-primary" style="font-size:.72rem;padding:4px 10px">Verify</button></td></tr>
+                <tr><td>🎵 TikTok</td><td>shamil.hustler</td><td><span class="status-badge status-approved">Verified</span></td><td><button class="btn-ghost" style="font-size:.72px;padding:4px 10px">Open</button></td></tr>
+                <tr><td>▶️ YouTube</td><td>shamilknows12</td><td><span class="status-badge status-approved">Verified</span></td><td><button class="btn-ghost" style="font-size:.72px;padding:4px 10px">Open</button></td></tr>
+                <tr><td>🎵 TikTok</td><td>shamilknows5</td><td><span class="status-badge status-approved">Verified</span></td><td><button class="btn-ghost" style="font-size:.72px;padding:4px 10px">Open</button></td></tr>
+                <tr><td>📸 Instagram</td><td>reindeer.ugc</td><td><span class="status-badge status-approved">Verified</span></td><td><button class="btn-ghost" style="font-size:.72px;padding:4px 10px">Open</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="acctab-balance-tab" style="display:none">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:1rem">Balance Overview</h3>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem">
+              <div class="metric-card"><div class="metric-label">Pending</div><div class="metric-val" style="color:#fbbf24;font-size:1.2rem">$15.75</div></div>
+              <div class="metric-card"><div class="metric-label">Queued</div><div class="metric-val" style="font-size:1.2rem">$3.92</div></div>
+              <div class="metric-card"><div class="metric-label">Available</div><div class="metric-val green" style="font-size:1.2rem">$10.29</div></div>
+            </div>
+            <button class="form-submit" style="max-width:180px;margin-top:1rem" onclick="showDashTab('balance')">Go to Withdraw</button>
+          </div>
+          <div id="acctab-affiliates" style="display:none">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:.5rem">Referral Program</h3>
+            <p style="font-size:.82rem;color:var(--text3);margin-bottom:1rem">Earn bonus XP and cash for every creator you refer who submits their first video.</p>
+            <div class="metric-card" style="margin-bottom:1rem"><div class="metric-label">Your Referral Link</div><div style="font-size:.82rem;color:var(--green);margin-top:.3rem;word-break:break-all">ugcmaxxing.com/ref/chillout</div></div>
+            <button class="btn-primary" onclick="showToast('Link copied!','success')">Copy Referral Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<!-- ============ ADMIN LOGIN PAGE ============ -->
+<div class="page" id="page-admin-login">
+<div class="auth-page">
+  <div class="auth-inner">
+    <div class="auth-logo">
+      <div class="auth-logo-icon">🛡️</div>
+      <div class="logo-text" style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800">Admin <span style="color:var(--green)">Portal</span></div>
+    </div>
+    <div class="form-card" style="max-width:100%">
+      <div class="form-title">Admin Access</div>
+      <div class="form-error" id="adminLoginError">Incorrect password.</div>
+      <div class="form-group">
+        <label>Admin Password</label>
+        <input type="password" id="adminPassInput" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doAdminLogin()">
+      </div>
+      <button class="form-submit" onclick="doAdminLogin()">Access Admin Portal</button>
+      <div class="form-footer"><a onclick="showPage('login')">← Back to Creator Login</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ ADMIN DASHBOARD ============ -->
+<div class="page" id="page-admin">
+<div class="dash-layout">
+  <aside class="sidebar" style="background:var(--g1);border-right:1px solid var(--border)">
+    <div style="padding:1rem .75rem .5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;padding:.4rem .5rem;background:rgba(34,197,94,0.08);border-radius:9px;border:1px solid var(--border)">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#0a0f0a">A</div>
+        <div><div style="font-size:.78rem;font-weight:700">Admin</div><div style="font-size:.65rem;color:var(--green)">Full Access</div></div>
+      </div>
+    </div>
+    <div style="padding:.25rem 0">
+      <div class="admin-sidebar-item active" onclick="showAdminTab('overview')" id="atab-overview">📊 Overview</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('submissions')" id="atab-submissions">📤 Submissions</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('campaigns')" id="atab-campaigns">📋 Campaigns</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('creators')" id="atab-creators">👥 Creators</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('earnings')" id="atab-earnings">💰 Earnings</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('payouts')" id="atab-payouts">💸 Payouts</div>
+      <div class="admin-sidebar-item" onclick="showAdminTab('campaigns-manage')" id="atab-campaigns-manage">⚙️ Manage Campaigns</div>
+      <div style="border-top:1px solid var(--border);margin:1rem .5rem .25rem"></div>
+      <div class="admin-sidebar-item" onclick="doAdminLogout()">🚪 Logout</div>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <!-- OVERVIEW -->
+    <div id="admin-dtab-overview">
+      <div class="dash-header">
+        <div><div class="dash-title">🛡️ Admin Dashboard</div><div class="breadcrumb">UGCMaxxing Admin Portal</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-card"><div class="metric-label">Total Creators</div><div class="metric-val">247</div><div class="metric-sub">+12 this week</div></div>
+        <div class="metric-card"><div class="metric-label">Active Campaigns</div><div class="metric-val">12</div><div class="metric-sub">3 pending approval</div></div>
+        <div class="metric-card"><div class="metric-label">Total Submissions</div><div class="metric-val" id="adminTotalSubs">0</div></div>
+        <div class="metric-card"><div class="metric-label">Pending Review</div><div class="metric-val" style="color:#fbbf24" id="adminPendingSubs">0</div></div>
+        <div class="metric-card"><div class="metric-label">Total Paid Out</div><div class="metric-val green">$4,821</div></div>
+        <div class="metric-card"><div class="metric-label">Pending Payouts</div><div class="metric-val" style="color:#fbbf24">$1,247</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem">
+        <div class="table-wrap">
+          <div class="lb-header"><div class="lb-title">📤 Recent Submissions</div></div>
+          <div id="adminRecentSubs"></div>
+        </div>
+        <div class="earners-panel">
+          <div class="earners-header"><div class="earners-title">🏆 Top Earners</div><div style="font-size:.72rem;color:var(--muted)">All time</div></div>
+          <div id="adminTopEarners"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN SUBMISSIONS -->
+    <div id="admin-dtab-submissions" style="display:none">
+      <div class="dash-header">
+        <div><div class="dash-title">📤 All Submissions</div><div class="breadcrumb">Review and approve creator submissions</div></div>
+      </div>
+      <div class="table-wrap">
+        <div class="table-toolbar">
+          <div class="filter-pill">All Statuses</div>
+          <div class="filter-pill">All Campaigns</div>
+          <div class="filter-pill">All Platforms</div>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Creator</th><th>Video URL</th><th>Campaign</th><th>Views</th><th>Projected</th><th>Submitted</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="adminSubsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN CAMPAIGNS -->
+    <div id="admin-dtab-campaigns" style="display:none">
+      <div class="dash-header">
+        <div><div class="dash-title">📋 Campaigns</div></div>
+        <button class="btn-primary" onclick="openAddCampaignModal()">+ Add Campaign</button>
+      </div>
+      <div class="campaigns-grid" id="adminCampaignsGrid"></div>
+    </div>
+
+    <!-- ADMIN CREATORS -->
+    <div id="admin-dtab-creators" style="display:none">
+      <div class="dash-header"><div><div class="dash-title">👥 Creators</div><div class="breadcrumb">Manage all creator accounts</div></div></div>
+      <div class="table-wrap">
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>Creator</th><th>Username</th><th>Tier</th><th>Submissions</th><th>Total Earned</th><th>Streak</th><th>Joined</th><th>Actions</th></tr></thead>
+            <tbody id="adminCreatorsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN EARNINGS -->
+    <div id="admin-dtab-earnings" style="display:none">
+      <div class="dash-header"><div><div class="dash-title">💰 Earnings Overview</div><div class="breadcrumb">Platform-wide earnings breakdown</div></div></div>
+      <div class="metrics-row">
+        <div class="metric-card"><div class="metric-label">Total Views Tracked</div><div class="metric-val">2.4M</div></div>
+        <div class="metric-card"><div class="metric-label">Total Creator Earnings</div><div class="metric-val green">$6,068</div></div>
+        <div class="metric-card"><div class="metric-label">Platform Revenue (50%)</div><div class="metric-val">$6,068</div></div>
+        <div class="metric-card"><div class="metric-label">Confirmed Paid</div><div class="metric-val">$4,821</div></div>
+        <div class="metric-card"><div class="metric-label">Pending Confirmation</div><div class="metric-val" style="color:#fbbf24">$1,247</div></div>
+      </div>
+      <div class="table-wrap" style="margin-top:1.25rem">
+        <div class="lb-header"><div class="lb-title">💰 Per-Creator Earnings</div></div>
+        <table><thead><tr><th>Creator</th><th>Total Views</th><th>Gross Earned</th><th>Platform Fee</th><th>Net to Creator</th><th>Status</th></tr></thead>
+        <tbody id="adminEarningsBody"></tbody></table>
+      </div>
+    </div>
+
+    <!-- ADMIN PAYOUTS -->
+    <div id="admin-dtab-payouts" style="display:none">
+      <div class="dash-header"><div><div class="dash-title">💸 Payout Requests</div><div class="breadcrumb">Approve or manage withdrawal requests</div></div></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Creator</th><th>Amount</th><th>Method</th><th>Requested</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody id="adminPayoutsBody"></tbody></table>
+      </div>
+    </div>
+
+    <!-- ADMIN MANAGE CAMPAIGNS -->
+    <div id="admin-dtab-campaigns-manage" style="display:none">
+      <div class="dash-header">
+        <div><div class="dash-title">⚙️ Manage Campaigns</div></div>
+        <button class="btn-primary" onclick="openAddCampaignModal()">+ Add Campaign</button>
+      </div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Brand</th><th>Campaign Name</th><th>CPM</th><th>Status</th><th>Submissions</th><th>Budget</th><th>Actions</th></tr></thead>
+        <tbody id="adminManageCampaignsBody"></tbody></table>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- SUBMIT VIDEO MODAL -->
+<div class="modal-overlay" id="submitModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Submit Video</div>
+      <button class="modal-close" onclick="closeModal('submitModal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label>Campaign</label>
+      <select id="submitCampaign">
+        <option>Lovable — Faced UGC</option>
+        <option>Playabl — Basic</option>
+        <option>Whop — Faced UGC</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Video URL</label>
+      <input type="url" id="submitUrl" placeholder="https://www.tiktok.com/@yourhandle/video/...">
+      <div class="form-hint">TikTok, Instagram Reel, or YouTube Short</div>
+    </div>
+    <div class="form-group">
+      <label>Platform Account</label>
+      <select>
+        <option>@shamilknows5 (TikTok)</option>
+        <option>@shamil.hustler (TikTok)</option>
+        <option>@shamilknows12 (YouTube)</option>
+        <option>@reindeer.ugc (Instagram)</option>
+      </select>
+    </div>
+    <button class="form-submit" onclick="doSubmitVideo()">Submit for Review</button>
+  </div>
+</div>
+
+<!-- ADD CAMPAIGN MODAL -->
+<div class="modal-overlay" id="addCampaignModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add New Campaign</div>
+      <button class="modal-close" onclick="closeModal('addCampaignModal')">✕</button>
+    </div>
+    <div class="form-group"><label>Brand Name</label><input id="nc-brand" placeholder="Brand name"></div>
+    <div class="form-group"><label>Campaign Name</label><input id="nc-name" placeholder="e.g. Faced UGC"></div>
+    <div class="form-group"><label>CPM ($ per 1000 views)</label><input id="nc-cpm" type="number" placeholder="e.g. 2.5" step="0.5"></div>
+    <div class="form-group"><label>Budget ($)</label><input id="nc-budget" type="number" placeholder="e.g. 5000"></div>
+    <div class="form-group"><label>Type</label><select id="nc-type"><option>Public</option><option>Premium</option><option>Exclusive</option></select></div>
+    <div class="form-group"><label>Description</label><textarea id="nc-desc" placeholder="Campaign requirements, content style, etc."></textarea></div>
+    <button class="form-submit" onclick="doAddCampaign()">Add Campaign</button>
+  </div>
+</div>
+
+<script>
+// ========== DATA ==========
+const CAMPAIGNS = [
+  {id:1, brand:'Lovable', name:'Faced UGC', cpm:2.5, type:'bounty', desc:'Build apps and websites by chatting with AI', icon:'💙', color:'#8b5cf6', bounty:true, myBrand:true},
+  {id:2, brand:'Playabl', name:'Basic', cpm:3.0, type:'basic', desc:'Mobile game — post your first video', icon:'🎮', color:'#1e293b', myBrand:true},
+  {id:3, brand:'Whop', name:'Faced UGC', cpm:2.5, type:'premium', desc:'The digital products marketplace', icon:'🛍️', color:'#0f172a', myBrand:false},
+  {id:4, brand:'Involio', name:'Creator UGC', cpm:2.0, type:'standard', desc:'Investment tracking for creators', icon:'💼', color:'#1d4ed8', myBrand:false},
+  {id:5, brand:'macOS', name:'App Review', cpm:1.5, type:'standard', desc:'Showcase this macOS productivity app', icon:'🍎', color:'#374151', myBrand:false},
+  {id:6, brand:'MCP Advanced', name:'Higsfield', cpm:3.5, type:'premium', desc:'Advanced AI workflow automation', icon:'🤖', color:'#065f46', myBrand:false},
+  {id:7, brand:'Academy', name:'Course Promo', cpm:2.0, type:'standard', desc:'Promote creator courses and workshops', icon:'🎓', color:'#7c3aed', myBrand:false},
+  {id:8, brand:'EasyTask', name:'Productivity UGC', cpm:1.8, type:'standard', desc:'Show how you use EasyTask daily', icon:'✅', color:'#0e7490', myBrand:false},
+];
+
+const SUBMISSIONS_DATA = [
+  {url:'https://www.tiktok.com/@shamilknows5/video/764908560f534299406', campaign:'Faced UGC', brand:'Lovable', views:158, likes:0, comments:0, earnings:0.47, submitted:'2026-06-19', status:'pending', earnStatus:'below-min', platform:'TikTok', account:'@shamilknows5'},
+  {url:'https://www.tiktok.com/@shamil.hustler/video/765269700I062157599', campaign:'MCP Advanced', brand:'Higsfield', views:1798, likes:71, comments:0, earnings:12.59, submitted:'2026-06-18', status:'pending', earnStatus:'earning', platform:'TikTok', account:'@shamil.hustler'},
+  {url:'https://www.tiktok.com/@shamilknows5/video/764897362220857664I3', campaign:'Basic Experimental UGC', brand:'Lovable', views:409, likes:10, comments:1, earnings:0, submitted:'2026-06-18', status:'rejected', earnStatus:'voided', platform:'TikTok', account:'@shamilknows5'},
+  {url:'https://www.tiktok.com/@shamilknows5/video/76490358642317423', campaign:'Faced UGC', brand:'Lovable', views:259, likes:2, comments:5, earnings:0.78, submitted:'2026-06-18', status:'approved', earnStatus:'below-min', platform:'TikTok', account:'@shamilknows5'},
+  {url:'https://www.tiktok.com/@shamilknows5/video/765050833251975022', campaign:'Faced UGC', brand:'Lovable', views:284, likes:2, comments:0, earnings:0.85, submitted:'2026-06-18', status:'approved', earnStatus:'below-min', platform:'TikTok', account:'@shamilknows5'},
+  {url:'https://www.tiktok.com/@shamilknows5/video/765052888558243549', campaign:'Faced UGC', brand:'Lovable', views:263, likes:1, comments:0, earnings:0.79, submitted:'2026-06-18', status:'approved', earnStatus:'below-min', platform:'TikTok', account:'@shamilknows5'},
+  {url:'https://www.instagram.com/reel/DZfk-NFsbWT', campaign:'Faced UGC', brand:'Lovable', views:569, likes:11, comments:0, earnings:1.71, submitted:'2026-06-17', status:'approved', earnStatus:'earning', platform:'Instagram', account:'@reindeer.ugc'},
+  {url:'https://www.instagram.com/reel/DZiJMLJxTnn', campaign:'Faced UGC', brand:'Lovable', views:484, likes:7, comments:0, earnings:1.45, submitted:'2026-06-17', status:'approved', earnStatus:'earning', platform:'Instagram', account:'@reindeer.ugc'},
+  {url:'https://www.youtube.com/shorts/_T3qGCF6jY', campaign:'Basic Experimental UGC', brand:'Lovable', views:972, likes:5, comments:0, earnings:3.89, submitted:'2026-06-15', status:'approved', earnStatus:'earning', platform:'YouTube', account:'@shamilknows12'},
+  {url:'https://www.youtube.com/shorts/tTyTRBLwORl', campaign:'Faced UGC', brand:'Lovable', views:1239, likes:3, comments:0, earnings:3.72, submitted:'2026-06-14', status:'approved', earnStatus:'earning', platform:'YouTube', account:'@shamilknows12'},
+  {url:'https://www.youtube.com/shorts/jd92aT6VgGE', campaign:'Faced UGC', brand:'Lovable', views:1087, likes:8, comments:0, earnings:3.26, submitted:'2026-06-14', status:'approved', earnStatus:'earning', platform:'YouTube', account:'@shamilknows12'},
+  {url:'https://www.tiktok.com/@shamilknows5/video/76394318822533234', campaign:'Faced UGC', brand:'Lovable', views:340, likes:2, comments:0, earnings:1.02, submitted:'2026-06-13', status:'approved', earnStatus:'earning', platform:'TikTok', account:'@shamilknows5'},
+];
+
+const TOP_EARNERS = [
+  {name:'@clay',streak:29,amount:'$33,867.86',rank:'1st',gold:true},
+  {name:'@jennifer-leeh',streak:88,amount:'$33,394.49',rank:'2nd',silver:true},
+  {name:'@steven',streak:64,amount:'$31,907.32',rank:'3rd',bronze:true},
+  {name:'@dotson',streak:7,amount:'$22,014.16',rank:'#4'},
+  {name:'@mylin',streak:36,amount:'$21,268.30',rank:'#5'},
+  {name:'@rachaelmartin',streak:26,amount:'$17,644.33',rank:'#6'},
+  {name:'@luiscredes',streak:68,amount:'$17,622.45',rank:'#7'},
+  {name:'@ericaaaa',streak:16,amount:'$17,810.97',rank:'#8'},
+  {name:'@briannaogo',streak:45,amount:'$16,758.56',rank:'#9'},
+  {name:'@nattyluv',streak:72,amount:'$12,851.93',rank:'#10'},
+];
+
+const CREATORS_DATA = [
+  {name:'Ahmad Khan',username:'ahmadpk',tier:'Gold',subs:124,earned:3240,streak:28,joined:'2026-01'},
+  {name:'Fatima Malik',username:'fatimaugc',tier:'Silver',subs:87,earned:1890,streak:14,joined:'2026-02'},
+  {name:'shamil',username:'chillout',tier:'Bronze',subs:12,earned:29.95,streak:3,joined:'2026-06'},
+  {name:'Zara Ahmed',username:'zaracreates',tier:'Bronze',subs:34,earned:245,streak:7,joined:'2026-04'},
+  {name:'Bilal Raza',username:'bilalviral',tier:'Copper',subs:5,earned:12,streak:1,joined:'2026-06'},
+];
+
+const PAYOUT_REQUESTS = [
+  {creator:'Ahmad Khan',amount:'$85.00',method:'JazzCash',requested:'2026-06-18',status:'pending'},
+  {creator:'Fatima Malik',amount:'$42.50',method:'EasyPaisa',requested:'2026-06-17',status:'pending'},
+  {creator:'shamil',amount:'$10.29',method:'JazzCash',requested:'2026-06-20',status:'queued'},
+];
+
+let adminCampaigns = [...CAMPAIGNS];
+let submissionsData = [...SUBMISSIONS_DATA];
+
+// ========== ROUTING ==========
+let currentUser = null;
+let isAdmin = false;
+
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  window.scrollTo(0,0);
+  const authed = ['dashboard'].includes(p);
+  document.getElementById('navCta').style.display = authed||isAdmin ? 'none' : 'flex';
+  document.getElementById('navAuthed').style.display = authed ? 'flex' : 'none';
+  document.getElementById('landingNavLinks').style.display = ['landing'].includes(p) ? 'flex' : 'none';
+  if(p==='landing') renderLandingData();
+}
+
+// ========== AUTH ==========
+function doLogin() {
+  const e = document.getElementById('loginEmail').value;
+  const p = document.getElementById('loginPass').value;
+  if(!e||!p){document.getElementById('loginError').textContent='Please fill all fields.';document.getElementById('loginError').classList.add('show');return;}
+  document.getElementById('loginError').classList.remove('show');
+  currentUser = {name:'shamil',username:'chillout'};
+  showPage('dashboard');
+  initDashboard();
+  showToast('Welcome back, shamil! 🎉','success');
+}
+
+function doSignup() {
+  const f = document.getElementById('signupFirst').value;
+  const u = document.getElementById('signupUser').value;
+  const e = document.getElementById('signupEmail').value;
+  const p = document.getElementById('signupPass').value;
+  if(!f||!u||!e||!p){document.getElementById('signupError').textContent='Please fill all required fields.';document.getElementById('signupError').classList.add('show');return;}
+  if(p.length<8){document.getElementById('signupError').textContent='Password must be at least 8 characters.';document.getElementById('signupError').classList.add('show');return;}
+  document.getElementById('signupError').classList.remove('show');
+  currentUser = {name:f,username:u};
+  showPage('dashboard');
+  initDashboard();
+  showToast('Account created! Welcome to UGCMaxxing 🚀','success');
+}
+
+function doLogout() {currentUser=null;showPage('landing');showToast('Logged out','success');}
+
+function doAdminLogin() {
+  const p = document.getElementById('adminPassInput').value;
+  if(p==='210711'){
+    isAdmin=true;
+    showPage('admin');
+    initAdmin();
+    showToast('Welcome, Admin 🛡️','success');
+  } else {
+    document.getElementById('adminLoginError').classList.add('show');
+  }
+}
+
+function doAdminLogout() {isAdmin=false;showPage('landing');showToast('Admin logged out','success');}
+
+// ========== DASHBOARD ==========
+function initDashboard() {
+  renderMyBrandsCampaigns();
+  renderOtherBrandsCampaigns();
+  renderSubmissionsTable();
+  renderTopEarners();
+  renderStreakDots();
+  renderCourses();
+}
+
+function showDashTab(tab) {
+  ['campaigns','submissions','earnings','retainers','courses','account','balance'].forEach(t=>{
+    const el = document.getElementById('dtab-'+t);
+    if(el) el.style.display = t===tab?'block':'none';
+    const st = document.getElementById('stab-'+t);
+    if(st) st.classList.toggle('active',t===tab);
+  });
+}
+
+function switchAccountTab(tab, el) {
+  document.querySelectorAll('[id^="acctab-"]').forEach(x=>x.style.display='none');
+  document.querySelectorAll('.account-nav-item').forEach(x=>x.classList.remove('active'));
+  document.getElementById('acctab-'+tab).style.display='block';
+  el.classList.add('active');
+}
+
+function renderMyBrandsCampaigns() {
+  const el = document.getElementById('myBrandsCampaigns');
+  el.innerHTML = CAMPAIGNS.filter(c=>c.myBrand).map(c=>campaignCard(c)).join('');
+}
+
+function renderOtherBrandsCampaigns() {
+  const el = document.getElementById('otherBrandsCampaigns');
+  el.innerHTML = CAMPAIGNS.filter(c=>!c.myBrand).map(c=>campaignCard(c)).join('');
+}
+
+function campaignCard(c) {
+  return `<div class="campaign-card">
+    <div class="campaign-thumb" style="background:${c.color}22;border-bottom:1px solid ${c.color}33">
+      <span style="font-size:3rem">${c.icon}</span>
+      ${c.bounty?'<span style="position:absolute;top:.6rem;left:.6rem;background:#fbbf24;color:#0a0f0a;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:100px">Bounty available</span>':''}
+      ${c.myBrand&&c.id===2?'<span style="position:absolute;top:.6rem;left:.6rem;background:var(--green);color:#0a0f0a;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:100px">ACCOUNT LINKED</span>':''}
+    </div>
+    <div class="campaign-body">
+      <div class="campaign-brand">${c.brand}</div>
+      <div class="campaign-name">${c.name}</div>
+      <div class="campaign-tags">
+        <span class="tag">$${c.cpm}/1K Views</span>
+        ${c.bounty?'<span class="tag premium">+$1,000 Bounty</span>':''}
+        ${c.type==='premium'?'<span class="tag premium">PREMIUM</span>':''}
+      </div>
+      <div class="campaign-cpm">
+        <div><div class="cpm-val">$${c.cpm}<span style="font-size:.7rem;color:var(--muted)">/1K</span></div></div>
+        <button class="join-btn" onclick="openSubmitModal()">Submit →</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderSubmissionsTable() {
+  const tbody = document.getElementById('submissionsBody');
+  tbody.innerHTML = submissionsData.map(s=>{
+    const statusClass = {approved:'status-approved',pending:'status-pending',rejected:'status-rejected',voided:'status-voided'}[s.status]||'status-pending';
+    const earnClass = s.earnStatus==='earning'?'earning':'';
+    const platIcon = {TikTok:'🎵',Instagram:'📸',YouTube:'▶️'}[s.platform]||'🎬';
+    return `<tr>
+      <td><div class="link-cell" title="${s.url}">${s.url.replace('https://www.','').replace('https://','')}</div></td>
+      <td><div style="font-size:.78rem;font-weight:600">${s.campaign}</div><div style="font-size:.7rem;color:var(--green)">${s.brand}</div></td>
+      <td>${s.views.toLocaleString()}</td>
+      <td>${s.likes}</td>
+      <td style="color:var(--green);font-weight:600">$${s.earnings.toFixed(2)}</td>
+      <td style="font-size:.75rem;color:var(--muted)">${s.submitted}</td>
+      <td><span class="status-badge ${statusClass}">${s.status.charAt(0).toUpperCase()+s.status.slice(1)}</span></td>
+      <td><span class="earn-status ${earnClass}">${{earning:'Earning','below-min':'Below Minimum',voided:'Voided',pending:'Pending'}[s.earnStatus]||s.earnStatus}</span></td>
+      <td><span class="platform-icon">${platIcon} ${s.platform}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderTopEarners() {
+  const el = document.getElementById('topEarnersList');
+  if(!el) return;
+  el.innerHTML = TOP_EARNERS.map((e,i)=>`
+    <div class="earner-row">
+      <div class="earner-av">${e.name.substring(1,3).toUpperCase()}</div>
+      <div class="earner-info">
+        <div class="earner-name">${e.name} <span style="font-size:.65rem;color:var(--green)">🔥 ${e.streak}</span></div>
+        <div class="earner-amt">${e.amount}</div>
+      </div>
+      <div class="earner-rank" style="color:${e.gold?'#f59e0b':e.silver?'#9ca3af':e.bronze?'#b45309':'var(--muted)'}">${e.rank}</div>
+    </div>`).join('');
+}
+
+function renderStreakDots() {
+  const el = document.getElementById('streakDots');
+  if(!el) return;
+  el.innerHTML = Array.from({length:14},(_, i)=>{
+    const cls = i<3?'done':i===3?'active':'';
+    return `<div class="streak-dot ${cls}">${i+1}</div>`;
+  }).join('');
+}
+
+function renderCourses() {
+  const el = document.getElementById('coursesList');
+  if(!el) return;
+  const courses = [
+    {title:'UGC Fundamentals',desc:'Learn the basics of user-generated content for brand campaigns.',icon:'🎬',duration:'45 min',level:'Beginner'},
+    {title:'TikTok Viral Formula',desc:'Step-by-step guide to creating consistently viral TikToks.',icon:'🎵',duration:'1.5 hrs',level:'Intermediate'},
+    {title:'Instagram Reels Mastery',desc:'How to shoot, edit and post Reels that get maximum reach.',icon:'📸',duration:'1 hr',level:'Beginner'},
+    {title:'YouTube Shorts Strategy',desc:'Optimize Shorts for views and CPM earnings.',icon:'▶️',duration:'2 hrs',level:'Advanced'},
+  ];
+  el.innerHTML = courses.map(c=>`
+    <div class="campaign-card">
+      <div class="campaign-thumb" style="background:rgba(34,197,94,0.08)"><span style="font-size:3rem">${c.icon}</span></div>
+      <div class="campaign-body">
+        <div class="campaign-brand">${c.level} · ${c.duration}</div>
+        <div class="campaign-name">${c.title}</div>
+        <p style="font-size:.8rem;color:var(--text3);margin-bottom:.75rem;line-height:1.5">${c.desc}</p>
+        <button class="join-btn" style="width:100%">Start Course →</button>
+      </div>
+    </div>`).join('');
+}
+
+// ========== LANDING DATA ==========
+function renderLandingData() {
+  const lc = document.getElementById('landingCampaigns');
+  if(lc) lc.innerHTML = CAMPAIGNS.slice(0,6).map(c=>campaignCardLanding(c)).join('');
+  renderLandingLeaderboard();
+}
+
+function campaignCardLanding(c) {
+  return `<div class="campaign-card" onclick="showPage('signup')">
+    <div class="campaign-thumb" style="background:${c.color}22">
+      <span style="font-size:3rem">${c.icon}</span>
+    </div>
+    <div class="campaign-body">
+      <div class="campaign-brand">${c.brand}</div>
+      <div class="campaign-name">${c.name}</div>
+      <div class="campaign-tags"><span class="tag">$${c.cpm}/1K Views</span>${c.bounty?'<span class="tag premium">+Bounty</span>':''}</div>
+      <div class="campaign-cpm">
+        <div class="cpm-val">$${c.cpm}<span style="font-size:.7rem;color:var(--muted)">/1K</span></div>
+        <button class="join-btn">Apply Now</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderLandingLeaderboard() {
+  const el = document.getElementById('landingLeaderboard');
+  if(!el) return;
+  el.innerHTML = `
+    <div class="lb-header"><div class="lb-title">🏆 Top Earners</div><div style="font-size:.72rem;color:var(--muted)">Last 30 Days</div></div>
+    ${TOP_EARNERS.slice(0,7).map((e,i)=>`
+    <div class="lb-row">
+      <div class="lb-rank ${e.gold?'gold':e.silver?'silver':e.bronze?'bronze':''}">${e.rank}</div>
+      <div class="lb-avatar">${e.name.substring(1,3).toUpperCase()}</div>
+      <div class="lb-name">${e.name}</div>
+      <div class="lb-streak">🔥 ${e.streak}</div>
+      <div class="lb-earnings">${e.amount}</div>
+    </div>`).join('')}`;
+}
+
+// ========== ADMIN ==========
+function initAdmin() {
+  renderAdminSubs();
+  renderAdminCampaigns();
+  renderAdminCreators();
+  renderAdminEarnings();
+  renderAdminPayouts();
+  renderAdminManageCampaigns();
+  renderAdminOverview();
+}
+
+function showAdminTab(tab) {
+  ['overview','submissions','campaigns','creators','earnings','payouts','campaigns-manage'].forEach(t=>{
+    const el = document.getElementById('admin-dtab-'+t);
+    if(el) el.style.display = t===tab?'block':'none';
+    const st = document.getElementById('atab-'+t);
+    if(st) st.classList.toggle('active',t===tab);
+  });
+}
+
+function renderAdminOverview() {
+  const pending = submissionsData.filter(s=>s.status==='pending').length;
+  document.getElementById('adminTotalSubs').textContent = submissionsData.length;
+  document.getElementById('adminPendingSubs').textContent = pending;
+  
+  const recentEl = document.getElementById('adminRecentSubs');
+  recentEl.innerHTML = submissionsData.slice(0,5).map(s=>{
+    const cls = {approved:'status-approved',pending:'status-pending',rejected:'status-rejected'}[s.status];
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.25rem;border-bottom:1px solid rgba(34,197,94,0.07)">
+      <div><div style="font-size:.78rem;font-weight:600">${s.campaign}</div><div style="font-size:.7rem;color:var(--muted)">${s.account}</div></div>
+      <span class="status-badge ${cls}">${s.status}</span>
+    </div>`;
+  }).join('');
+  
+  const earnersEl = document.getElementById('adminTopEarners');
+  earnersEl.innerHTML = TOP_EARNERS.slice(0,5).map(e=>`
+    <div class="earner-row">
+      <div class="earner-av">${e.name.substring(1,3).toUpperCase()}</div>
+      <div class="earner-info"><div class="earner-name">${e.name}</div><div class="earner-amt">${e.amount}</div></div>
+      <div class="earner-rank">${e.rank}</div>
+    </div>`).join('');
+}
+
+function renderAdminSubs() {
+  const tbody = document.getElementById('adminSubsBody');
+  tbody.innerHTML = submissionsData.map((s,i)=>{
+    const statusClass = {approved:'status-approved',pending:'status-pending',rejected:'status-rejected'}[s.status]||'status-pending';
+    return `<tr>
+      <td style="font-size:.78rem;font-weight:600">${s.account}</td>
+      <td><div class="link-cell" style="max-width:140px" title="${s.url}">${s.url.split('/').slice(-1)[0]?.substring(0,16)||'...'}</div></td>
+      <td><span style="font-size:.78rem">${s.campaign}</span></td>
+      <td>${s.views.toLocaleString()}</td>
+      <td style="color:var(--green)">$${s.earnings.toFixed(2)}</td>
+      <td style="font-size:.75rem;color:var(--muted)">${s.submitted}</td>
+      <td><span class="status-badge ${statusClass}">${s.status}</span></td>
+      <td style="white-space:nowrap">
+        ${s.status==='pending'?`<button class="admin-action-btn admin-approve" onclick="adminApproveSub(${i})">Approve</button> <button class="admin-action-btn admin-reject" onclick="adminRejectSub(${i})">Reject</button>`:'<span style="font-size:.75rem;color:var(--muted)">—</span>'}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function adminApproveSub(i) {
+  submissionsData[i].status='approved';
+  submissionsData[i].earnStatus='earning';
+  renderAdminSubs();renderSubmissionsTable();renderAdminOverview();
+  showToast('Submission approved ✓','success');
+}
+
+function adminRejectSub(i) {
+  submissionsData[i].status='rejected';
+  submissionsData[i].earnStatus='voided';
+  renderAdminSubs();renderSubmissionsTable();renderAdminOverview();
+  showToast('Submission rejected','error');
+}
+
+function renderAdminCampaigns() {
+  const el = document.getElementById('adminCampaignsGrid');
+  if(el) el.innerHTML = adminCampaigns.map(c=>campaignCardLanding(c)).join('');
+}
+
+function renderAdminCreators() {
+  const tbody = document.getElementById('adminCreatorsBody');
+  if(!tbody) return;
+  tbody.innerHTML = CREATORS_DATA.map(c=>`<tr>
+    <td style="font-weight:600">${c.name}</td>
+    <td style="color:var(--green)">@${c.username}</td>
+    <td><span class="status-badge ${c.tier==='Gold'?'status-approved':c.tier==='Silver'?'status-pending':'status-voided'}">${c.tier}</span></td>
+    <td>${c.subs}</td>
+    <td style="color:var(--green)">$${c.earned.toFixed(2)}</td>
+    <td>🔥 ${c.streak}</td>
+    <td style="color:var(--muted);font-size:.75rem">${c.joined}</td>
+    <td><button class="admin-action-btn" style="background:rgba(34,197,94,0.1);color:var(--green)" onclick="showToast('Creator details opened','success')">View</button></td>
+  </tr>`).join('');
+}
+
+function renderAdminEarnings() {
+  const tbody = document.getElementById('adminEarningsBody');
+  if(!tbody) return;
+  tbody.innerHTML = CREATORS_DATA.map(c=>{
+    const gross = c.earned*2;
+    const fee = c.earned;
+    return `<tr>
+      <td style="font-weight:600">${c.name}</td>
+      <td>${(c.earned*350).toLocaleString()}</td>
+      <td>$${gross.toFixed(2)}</td>
+      <td style="color:var(--muted)">$${fee.toFixed(2)} (50%)</td>
+      <td style="color:var(--green)">$${c.earned.toFixed(2)}</td>
+      <td><span class="status-badge ${c.tier==='Copper'?'status-pending':'status-approved'}">${c.tier==='Copper'?'Pending':'Confirmed'}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderAdminPayouts() {
+  const tbody = document.getElementById('adminPayoutsBody');
+  if(!tbody) return;
+  tbody.innerHTML = PAYOUT_REQUESTS.map((p,i)=>`<tr>
+    <td style="font-weight:600">${p.creator}</td>
+    <td style="color:var(--green);font-weight:700">${p.amount}</td>
+    <td>${p.method}</td>
+    <td style="font-size:.75rem;color:var(--muted)">${p.requested}</td>
+    <td><span class="status-badge ${p.status==='pending'?'status-pending':'status-voided'}">${p.status}</span></td>
+    <td>${p.status==='pending'?`<button class="admin-action-btn admin-payout-btn" onclick="approveAdminPayout(${i})">Approve</button>`:'<span style="font-size:.75rem;color:var(--muted)">Processed</span>'}</td>
+  </tr>`).join('');
+}
+
+function approveAdminPayout(i) {
+  PAYOUT_REQUESTS[i].status='approved';
+  renderAdminPayouts();
+  showToast('Payout approved! Creator notified.','success');
+}
+
+function renderAdminManageCampaigns() {
+  const tbody = document.getElementById('adminManageCampaignsBody');
+  if(!tbody) return;
+  tbody.innerHTML = adminCampaigns.map((c,i)=>`<tr>
+    <td style="font-weight:600">${c.brand}</td>
+    <td>${c.name}</td>
+    <td style="color:var(--green)">$${c.cpm}/1K</td>
+    <td><span class="status-badge status-approved">Active</span></td>
+    <td>${submissionsData.filter(s=>s.campaign===c.name).length}</td>
+    <td style="color:var(--muted)">$5,000</td>
+    <td>
+      <button class="admin-action-btn" style="background:rgba(34,197,94,0.1);color:var(--green)" onclick="showToast('Campaign editing...','success')">Edit</button>
+      <button class="admin-action-btn admin-reject" onclick="removeCampaign(${i})" style="margin-left:.4rem">Remove</button>
+    </td>
+  </tr>`).join('');
+}
+
+function removeCampaign(i) {
+  adminCampaigns.splice(i,1);
+  renderAdminManageCampaigns();
+  renderAdminCampaigns();
+  showToast('Campaign removed','error');
+}
+
+function openAddCampaignModal() {
+  document.getElementById('addCampaignModal').classList.add('open');
+}
+
+function doAddCampaign() {
+  const brand = document.getElementById('nc-brand').value;
+  const name = document.getElementById('nc-name').value;
+  const cpm = parseFloat(document.getElementById('nc-cpm').value)||2.5;
+  if(!brand||!name){showToast('Please fill brand and campaign name','error');return;}
+  adminCampaigns.push({id:Date.now(),brand,name,cpm,type:'standard',desc:'New campaign',icon:'🆕',color:'#065f46',myBrand:false});
+  CAMPAIGNS.push({id:Date.now(),brand,name,cpm,type:'standard',desc:'New campaign',icon:'🆕',color:'#065f46',myBrand:false});
+  closeModal('addCampaignModal');
+  renderAdminManageCampaigns();
+  renderAdminCampaigns();
+  renderMyBrandsCampaigns();
+  renderOtherBrandsCampaigns();
+  showToast(`Campaign "${name}" added!`,'success');
+}
+
+// ========== MODALS ==========
+function openSubmitModal() {document.getElementById('submitModal').classList.add('open');}
+function closeModal(id) {document.getElementById(id).classList.remove('open');}
+
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('modal-overlay')) e.target.classList.remove('open');
+});
+
+function doSubmitVideo() {
+  const url = document.getElementById('submitUrl').value;
+  if(!url){showToast('Please enter a video URL','error');return;}
+  const newSub = {
+    url,campaign:'Faced UGC',brand:'Lovable',views:0,likes:0,comments:0,earnings:0,
+    submitted:new Date().toISOString().split('T')[0],status:'pending',earnStatus:'pending',
+    platform:'TikTok',account:'@shamilknows5'
+  };
+  submissionsData.unshift(newSub);
+  closeModal('submitModal');
+  document.getElementById('submitUrl').value='';
+  renderSubmissionsTable();
+  const badge = document.getElementById('submissionsBadge');
+  badge.textContent = parseInt(badge.textContent)+1;
+  showToast('Video submitted for review! ✓','success');
+}
+
+// ========== UTILS ==========
+function showToast(msg,type='success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+function openJoinDiscord() {showToast('Opening Discord...','success');}
+function doWithdraw() {showToast('Withdrawal request submitted! 1-3 business days.','success');}
+function selectPayMethod(el) {document.querySelectorAll('.pay-method').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');}
+
+// ========== INIT ==========
+renderLandingData();
+</script>
+</body>
+</html>
+HTMLEOF
+echo "Done! File size: $(wc -c < /mnt/user-data/outputs/ugcmaxxing.html) bytes"
